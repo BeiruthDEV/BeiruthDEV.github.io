@@ -2,7 +2,7 @@
 
 :root {
   --header-height: 3.5rem;
-  --hue: 40;
+  --hue: 45;
   --first-color: hsl(var(--hue), 100%, 50%);
   --first-color-alt: hsl(var(--hue), 100%, 35%);
   --first-color-glow: hsla(var(--hue), 100%, 50%, 0.3);
@@ -52,15 +52,25 @@ html {
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+
   background-color: var(--body-color);
   color: var(--text-color);
-  background-image:
-    radial-gradient(circle at 15% 50%, hsla(var(--hue), 100%, 40%, 0.12), transparent 45%),
-    radial-gradient(circle at 85% 20%, rgba(41, 98, 255, 0.1), transparent 45%),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: auto, auto, 40px 40px, 40px 40px;
+
+  background-image: radial-gradient(circle at 50% -20%,
+      hsla(var(--hue), 100%, 50%, 0.15),
+      transparent 50%);
+
   background-attachment: fixed;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 0 0, 0 0, 50px 50px, 50px 50px;
+  }
 }
 
 h1,

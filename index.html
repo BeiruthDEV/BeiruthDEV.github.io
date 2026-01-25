@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Portfólio de Matheus Beiruth - Engenheiro de Software especializado em Backend, Microsserviços e APIs de Alta Performance. Disponível para contratação.">
+    <meta name="keywords"
+        content="Matheus Beiruth, Backend Developer, Java Spring Boot, Python Django, Engenharia de Software, Junior Developer, Vagas TI">
+    <meta name="author" content="Matheus Beiruth">
+    <meta name="theme-color" content="#FFD700">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://beiruthdev.github.io/">
+    <meta property="og:title" content="Matheus Beiruth | Backend Engineer">
+    <meta property="og:description"
+        content="Engenharia de Software focada em escalabilidade e regras de negócio complexas. Veja meus projetos.">
+    <meta property="og:image" content="assets/img/preview.png">
+
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Matheus Beiruth | Software Engineer</title>
+
+    <title>Matheus Beiruth | Backend Engineer</title>
 </head>
+
 <body>
     <header class="header" id="header">
         <nav class="nav container">
@@ -15,10 +34,11 @@
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li><a href="#home" class="nav__link active-link">Início</a></li>
                     <li><a href="#about" class="nav__link">Sobre</a></li>
                     <li><a href="#skills" class="nav__link">Stack</a></li>
                     <li><a href="#projects" class="nav__link">Projetos</a></li>
+                    <li><a href="#education" class="nav__link">Formação</a></li>
                     <li><a href="#contact" class="nav__link">Contato</a></li>
                 </ul>
                 <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
@@ -32,18 +52,22 @@
             <div class="home__container container grid">
                 <div class="home__content">
                     <div class="home__data">
-                        <span class="home__subtitle">Backend Developer</span>
-                        <h1 class="home__title">Transformando Lógica<br>em Performance</h1>
+                        <span class="home__subtitle">I am <span class="typewriter-text"></span></span>
+
+                        <h1 class="home__title">Construindo Sistemas<br>Escaláveis e Seguros</h1>
                         <p class="home__description">
-                            Especialista em simplificar sistemas complexos utilizando <b>Python e Java</b>. 
-                            Crio backends robustos que unem eficiência técnica e valor de negócio.
+                            Foco em resolver problemas complexos de negócio através de arquiteturas limpas em <b>Java
+                                (Spring)</b> e <b>Python</b>.
+                            Pronto para impactar times de alta performance.
                         </p>
+
                         <div class="home__buttons">
-                            <a href="#projects" class="button">
-                                Ver Projetos <i class="ri-arrow-right-line"></i>
+                            <a href="assets/pdf/Curriculo_Matheus_Beiruth.pdf" download="Curriculo_Matheus_Beiruth.pdf"
+                                class="button">
+                                Baixar CV Completo <i class="ri-download-cloud-2-line"></i>
                             </a>
-                            <a href="https://github.com/BeiruthDEV" target="_blank" class="button button--ghost">
-                                <i class="ri-github-fill"></i> GitHub
+                            <a href="#contact" class="button button--ghost">
+                                Entrar em Contato <i class="ri-chat-3-line"></i>
                             </a>
                         </div>
                     </div>
@@ -58,29 +82,33 @@
 
         <section class="about section" id="about">
             <div class="container">
-                <h2 class="section__title">Sobre o <span>Desenvolvedor</span></h2>
-                
+                <h2 class="section__title">Diferenciais <span>Profissionais</span></h2>
+
                 <div class="about__container grid">
                     <div class="about__data">
                         <p>
-                            Sou Matheus Beiruth, um entusiasta de tecnologia e estudante de <b>Engenharia de Software</b>. 
-                            Minha jornada não é apenas sobre escrever código, mas sobre resolver problemas reais através de 
-                            arquiteturas inteligentes. Tenho experiência prática com microsserviços, otimização de banco de dados 
-                            e desenvolvimento de APIs robustas.
+                            Diferente de apenas "escrever código", meu foco está na <b>Engenharia da Solução</b>.
+                            Atualmente no 8º período de Engenharia de Software, combino a base teórica acadêmica
+                            (Algoritmos, Estrutura de Dados)
+                            com a prática de mercado (APIs REST, Cloud, DevOps).
                         </p>
-                        
+                        <p>
+                            Minha abordagem prioriza manutenção a longo prazo, testes automatizados e código legível
+                            para facilitar o trabalho em equipe.
+                        </p>
+
                         <div class="stats__grid">
                             <div class="stats__item">
-                                <span class="stats__number">3+</span>
-                                <span class="stats__title">Anos Estudando</span>
+                                <span class="stats__number">Java</span>
+                                <span class="stats__title">Spring Boot</span>
                             </div>
                             <div class="stats__item">
-                                <span class="stats__number">8º</span>
-                                <span class="stats__title">Período Eng. Soft</span>
+                                <span class="stats__number">Python</span>
+                                <span class="stats__title">Django/FastAPI</span>
                             </div>
                             <div class="stats__item">
-                                <span class="stats__number">10+</span>
-                                <span class="stats__title">Projetos Entregues</span>
+                                <span class="stats__number">SQL</span>
+                                <span class="stats__title">Modelagem</span>
                             </div>
                         </div>
                     </div>
@@ -89,135 +117,130 @@
         </section>
 
         <section class="skills section" id="skills">
-            <h2 class="section__title">Tech <span>Stack</span></h2>
+            <h2 class="section__title">Arsenal <span>Técnico</span></h2>
             <div class="tech__container container grid">
-                
+
                 <div class="tech__box">
-                    <h3 class="tech__title"><i class="ri-server-line"></i> Backend Core</h3>
+                    <h3 class="tech__title"><i class="ri-code-s-slash-line"></i> Backend & API</h3>
                     <div class="tech__list">
-                        <span class="tech__tag">Python</span>
-                        <span class="tech__tag">Django</span>
-                        <span class="tech__tag">FastAPI</span>
-                        <span class="tech__tag">Java</span>
-                        <span class="tech__tag">Spring Boot</span>
-                        <span class="tech__tag">REST APIs</span>
+                        <span class="tech__tag"><i class="devicon-java-plain colored"></i> Java 17+</span>
+                        <span class="tech__tag"><i class="devicon-spring-original colored"></i> Spring Boot</span>
+                        <span class="tech__tag"><i class="devicon-python-plain colored"></i> Python 3</span>
+                        <span class="tech__tag"><i class="devicon-django-plain colored"></i> Django</span>
+                        <span class="tech__tag"><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
                     </div>
                 </div>
 
                 <div class="tech__box">
-                    <h3 class="tech__title"><i class="ri-database-2-line"></i> Infra & Data</h3>
+                    <h3 class="tech__title"><i class="ri-server-line"></i> Infra & Banco de Dados</h3>
                     <div class="tech__list">
-                        <span class="tech__tag">MySQL</span>
-                        <span class="tech__tag">MongoDB</span>
-                        <span class="tech__tag">Redis</span>
-                        <span class="tech__tag">RabbitMQ</span>
-                        <span class="tech__tag">Docker</span>
-                        <span class="tech__tag">Git</span>
+                        <span class="tech__tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+                        <span class="tech__tag"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                        <span class="tech__tag"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                        <span class="tech__tag"><i class="devicon-redis-plain colored"></i> Redis</span>
+                        <span class="tech__tag"><i class="devicon-docker-plain colored"></i> Docker</span>
+                        <span class="tech__tag"><i class="devicon-git-plain colored"></i> Git</span>
                     </div>
                 </div>
 
-            </div>
-        </section>
+                <div class="tech__box">
+                    <h3 class="tech__title"><i class="ri-team-line"></i> Soft Skills</h3>
+                    <div class="tech__list">
+                        <span class="tech__tag"><i class="ri-group-line"></i> Scrum/Kanban</span>
+                        <span class="tech__tag"><i class="ri-git-merge-line"></i> Git Flow</span>
+                        <span class="tech__tag"><i class="ri-medal-line"></i> Clean Code</span>
+                        <span class="tech__tag"><i class="ri-translate-2"></i> Inglês Técnico</span>
+                    </div>
+                </div>
 
-        <section class="services section" id="services">
-            <h2 class="section__title">Especialidades & <span>Tecnologias</span></h2>
-            <div class="services__container container grid">
-                
-                <article class="services__card">
-                    <i class="ri-terminal-window-line services__icon"></i>
-                    <h3 class="services__title">Desenvolvimento Python</h3>
-                    <p class="services__description">
-                        Criação de aplicações web robustas e admin dashboards utilizando <b>Django</b> e <b>FastAPI</b>. Automação de tarefas e scripts de alta performance.
-                    </p>
-                </article>
-
-                <article class="services__card">
-                    <i class="ri-cup-line services__icon"></i>
-                    <h3 class="services__title">Java Enterprise</h3>
-                    <p class="services__description">
-                        Desenvolvimento de sistemas corporativos seguros e escaláveis com <b>Java</b> e <b>Spring Boot</b>, focados em arquitetura de microsserviços.
-                    </p>
-                </article>
-
-                <article class="services__card">
-                    <i class="ri-database-2-line services__icon"></i>
-                    <h3 class="services__title">Database Solutions</h3>
-                    <p class="services__description">
-                        Modelagem avançada e otimização de bancos relacionais como <b>PostgreSQL</b> e <b>MySQL</b>, além de integração com NoSQL (MongoDB).
-                    </p>
-                </article>
-
-                 <article class="services__card">
-                    <i class="ri-share-forward-line services__icon"></i>
-                    <h3 class="services__title">API Engineering</h3>
-                    <p class="services__description">
-                        Design e implementação de <b>APIs RESTful</b> documentadas e seguras, prontas para integração com Front-end e parceiros externos.
-                    </p>
-                </article>
+                <div class="tech__box">
+                    <h3 class="tech__title"><i class="ri-tools-line"></i> Ferramentas</h3>
+                    <div class="tech__list">
+                        <span class="tech__tag"><i class="devicon-intellij-plain colored"></i> IntelliJ</span>
+                        <span class="tech__tag"><i class="devicon-vscode-plain colored"></i> VS Code</span>
+                        <span class="tech__tag"><i class="devicon-postman-plain colored"></i> Postman</span>
+                        <span class="tech__tag"><i class="devicon-jira-plain colored"></i> Jira</span>
+                        <span class="tech__tag"><i class="devicon-linux-plain colored"></i> Linux</span>
+                    </div>
+                </div>
 
             </div>
         </section>
 
         <section class="projects section" id="projects">
-            <h2 class="section__title">Projetos <span>Selecionados</span></h2>
-            
+            <h2 class="section__title">Projetos de <span>Engenharia</span></h2>
+            <span class="section__subtitle"
+                style="display:block; text-align:center; margin-top:-2rem; margin-bottom: 3rem; color: #888;">Focados em
+                resolução de problemas reais</span>
+
             <div class="projects__container container grid">
-                
+
                 <article class="project__card">
                     <div class="project__img-wrapper">
-                        <img src="assets/img/projects/transflow.png" alt="TransFlow" class="project__img">
+                        <img src="assets/img/projects/transflow.png" alt="TransFlow API" class="project__img"
+                            loading="lazy">
                     </div>
                     <div class="project__content">
-                        <h3 class="project__title">TransFlow API</h3>
+                        <h3 class="project__title">TransFlow - Enterprise API</h3>
                         <p class="project__description">
-                            Sistema de backend para gestão de transporte urbano. Foco em alta concorrência e filas de processamento.
+                            <b>Desafio:</b> Sistema de gestão de transporte urbano que necessitava lidar com múltiplas
+                            solicitações simultâneas sem travar.<br>
+                            <b>Solução:</b> Implementação de arquitetura assíncrona com filas (RabbitMQ) e cache (Redis)
+                            para reduzir latência.
                         </p>
                         <div class="project__tags">
+                            <span class="project__tag">Python</span>
                             <span class="project__tag">FastAPI</span>
-                            <span class="project__tag">RabbitMQ</span>
-                            <span class="project__tag">Redis</span>
+                            <span class="project__tag">Microsserviços</span>
                         </div>
                         <a href="https://github.com/BeiruthDEV/transflow-backend" target="_blank" class="project__link">
-                            Ver Código <i class="ri-arrow-right-line"></i>
+                            Ver Arquitetura <i class="ri-github-line"></i>
                         </a>
                     </div>
                 </article>
 
                 <article class="project__card">
                     <div class="project__img-wrapper">
-                        <img src="assets/img/projects/logistica-soja.png" alt="Logística" class="project__img">
+                        <img src="assets/img/projects/logistica-soja.png" alt="Otimização Logística"
+                            class="project__img" loading="lazy">
                     </div>
                     <div class="project__content">
-                        <h3 class="project__title">Otimização Logística</h3>
+                        <h3 class="project__title">AgroLog - Otimização de Rotas</h3>
                         <p class="project__description">
-                            Algoritmo de Teoria dos Grafos para otimizar rotas de escoamento de soja.
+                            <b>Desafio:</b> Reduzir custos no escoamento de soja através de rotas ineficientes.<br>
+                            <b>Solução:</b> Aplicação de Teoria dos Grafos (Algoritmo de Dijkstra) para calcular
+                            matematicamente o caminho de menor custo logístico.
                         </p>
                         <div class="project__tags">
                             <span class="project__tag">Python</span>
                             <span class="project__tag">NetworkX</span>
-                            <span class="project__tag">Data Science</span>
+                            <span class="project__tag">Algoritmos</span>
                         </div>
-                        <a href="https://github.com/BeiruthDEV/otimizacao-logistica-soja" target="_blank" class="project__link">
-                            Ver Código <i class="ri-arrow-right-line"></i>
+                        <a href="https://github.com/BeiruthDEV/otimizacao-logistica-soja" target="_blank"
+                            class="project__link">
+                            Ver Algoritmo <i class="ri-github-line"></i>
                         </a>
                     </div>
                 </article>
 
                 <article class="project__card">
                     <div class="project__img-wrapper">
-                        <img src="assets/img/projects/glass-weather.png" alt="Hour Tracker" class="project__img">
+                        <img src="assets/img/projects/java-api.png" alt="API Java" class="project__img" loading="lazy">
                     </div>
                     <div class="project__content">
-                        <h3 class="project__title">Glass Weather </h3>
+                        <h3 class="project__title">Bank Secure API</h3>
                         <p class="project__description">
-                            Aplicativo Mobile para climatempo, utilizando dados reais
+                            <b>Desafio:</b> Criar um sistema bancário seguro com autenticação robusta.<br>
+                            <b>Solução:</b> Backend em Spring Boot com Spring Security (JWT), seguindo padrões RESTful e
+                            validações estritas de dados.
                         </p>
                         <div class="project__tags">
-                            <span class="project__tag">React Native</span>
-                            <span class="project__tag">Expo</span>
+                            <span class="project__tag">Java</span>
+                            <span class="project__tag">Spring Boot</span>
+                            <span class="project__tag">JWT</span>
                         </div>
-                        <a href="https://github.com/BeiruthDEV/glass-weather-app" target="_blank" class="project__link">
-                            Ver Código <i class="ri-arrow-right-line"></i>
+                        <a href="https://github.com/BeiruthDEV" target="_blank" class="project__link">
+                            Ver Código <i class="ri-github-line"></i>
                         </a>
                     </div>
                 </article>
@@ -225,35 +248,66 @@
             </div>
         </section>
 
+        <section class="education section" id="education">
+            <h2 class="section__title">Formação <span>Acadêmica</span></h2>
+
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <div class="tech__box" style="display: flex; gap: 1.5rem; align-items: center; text-align: left;">
+                    <div style="font-size: 3rem; color: var(--first-color);">
+                        <i class="ri-graduation-cap-fill"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.25rem;">Bacharelado em Engenharia de Software</h3>
+                        <span
+                            style="display: block; color: var(--text-color-light); margin-bottom: 0.5rem;">Universidade
+                            de Vassouras - Maricá/RJ</span>
+                        <p style="font-size: 0.9rem;">
+                            Cursando 8º Período (Previsão de conclusão: Dez/2026).<br>
+                            Foco em: Estrutura de Dados Avançada, Engenharia de Requisitos e Sistemas Distribuídos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="contact section" id="contact">
-            <h2 class="section__title">Vamos <span>Conversar?</span></h2>
+            <h2 class="section__title">Disponível para <span>Entrevistas</span></h2>
             <div class="contact__container container grid">
-                
+
                 <div class="contact__info">
                     <div class="contact__card">
-                        <i class="ri-mail-send-line contact__icon"></i>
-                        <h3 class="contact__title">Email</h3>
+                        <i class="ri-mail-check-line contact__icon"></i>
+                        <h3 class="contact__title">Email Direto</h3>
                         <span class="contact__data">matheusbeiruth10@gmail.com</span>
+                        <a href="mailto:matheusbeiruth10@gmail.com"
+                            style="display:block; margin-top:0.5rem; color:var(--first-color); font-size:0.8rem;">Enviar
+                            Email Agora</a>
                     </div>
                     <div class="contact__card">
                         <i class="ri-linkedin-box-line contact__icon"></i>
                         <h3 class="contact__title">LinkedIn</h3>
-                        <span class="contact__data">/in/matheusbeiruth</span>
+                        <span class="contact__data">Perfil Profissional</span>
+                        <a href="https://www.linkedin.com/in/matheusbeiruth/" target="_blank"
+                            style="display:block; margin-top:0.5rem; color:var(--first-color); font-size:0.8rem;">Conectar</a>
                     </div>
                 </div>
 
                 <form id="contact-form" class="contact__form">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Novo contato do Portfólio!">
+                    <input type="hidden" name="_subject" value="Recrutador - Contato via Portfólio">
 
                     <div class="contact__group">
-                         <input type="text" name="name" placeholder="Nome" class="contact__input" required>
-                        <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                        <input type="text" name="name" placeholder="Nome do Recrutador / Empresa" class="contact__input"
+                            required>
+                        <input type="email" name="email" placeholder="Seu Email Corporativo" class="contact__input"
+                            required>
                     </div>
-                    <textarea name="message" cols="30" rows="10" placeholder="Mensagem sobre o projeto..." class="contact__input" required></textarea>
-    
+                    <textarea name="message" cols="30" rows="10"
+                        placeholder="Olá Matheus, vi seu portfólio e gostaria de agendar uma entrevista..."
+                        class="contact__input" required></textarea>
+
                     <button type="submit" class="button">
-                         Enviar Mensagem <i class="ri-send-plane-fill"></i>
+                        Agendar Conversa <i class="ri-calendar-check-line"></i>
                     </button>
                 </form>
 
@@ -263,22 +317,14 @@
 
     <footer class="footer">
         <div class="footer__container container">
-            <h1 class="footer__title">&lt;Matheus <span>Beiruth</span> /&gt;</h1>
-            
             <div class="footer__social">
-                <a href="https://github.com/BeiruthDEV" target="_blank" class="footer__social-link">
-                    <i class="ri-github-fill"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/matheusbeiruth/" target="_blank" class="footer__social-link">
-                    <i class="ri-linkedin-fill"></i>
-                </a>
-                <a href="mailto:matheusbeiruth10@gmail.com" class="footer__social-link">
-                    <i class="ri-mail-line"></i>
-                </a>
+                <a href="https://github.com/BeiruthDEV" target="_blank" class="footer__social-link"><i
+                        class="ri-github-fill"></i></a>
+                <a href="https://www.linkedin.com/in/matheusbeiruth/" target="_blank" class="footer__social-link"><i
+                        class="ri-linkedin-fill"></i></a>
+                <a href="mailto:matheusbeiruth10@gmail.com" class="footer__social-link"><i class="ri-mail-line"></i></a>
             </div>
-
             <span class="footer__copy">
-                &copy; 2026 Matheus Beiruth. Todos os direitos reservados.
             </span>
         </div>
     </footer>
@@ -290,4 +336,5 @@
     <script src="assets/js/scrollreveal.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
