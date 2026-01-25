@@ -2,7 +2,7 @@
 
 :root {
   --header-height: 3.5rem;
-  --hue: 220;
+  --hue: 40;
   --first-color: hsl(var(--hue), 100%, 50%);
   --first-color-alt: hsl(var(--hue), 100%, 35%);
   --first-color-glow: hsla(var(--hue), 100%, 50%, 0.3);
