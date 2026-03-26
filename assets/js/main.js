@@ -72,7 +72,8 @@ sr.reveal(`.about__data`, { origin: 'left' })
 
 sr.reveal(`.education`, { origin: 'bottom', interval: 100 })
 
-sr.reveal(`.tech__box, .project__card`, { interval: 100 })
+// Adicionado o .certificate__card para garantir a mesma animação dos projetos
+sr.reveal(`.tech__box, .project__card, .certificate__card`, { interval: 100 })
 
 sr.reveal(`.contact__container`, { origin: 'right' })
 
