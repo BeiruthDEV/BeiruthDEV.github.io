@@ -1,156 +1,128 @@
-const navMenu = document.getElementById('nav-menu'),
-    navToggle = document.getElementById('nav-toggle'),
-    navClose = document.getElementById('nav-close')
+const header = document.getElementById("header");
+const navMenu = document.getElementById("nav-menu");
+const navToggle = document.getElementById("nav-toggle");
+const navLinks = Array.from(document.querySelectorAll(".nav__link"));
+const revealItems = document.querySelectorAll(".reveal");
+const sections = document.querySelectorAll("main section[id]");
+const hero = document.getElementById("home");
+const heroShell = hero?.querySelector(".hero__shell");
+const heroVisual = document.getElementById("hero-visual");
+
+const setHeaderState = () => {
+  header.classList.toggle("is-scrolled", window.scrollY > 24);
+};
+
+const setHeroState = () => {
+  if (!hero || !heroShell) {
+    return;
+  }
+
+  const fadeDistance = hero.offsetHeight * 0.72;
+  const progress = Math.min(window.scrollY / fadeDistance, 1);
+  const opacity = 1 - progress;
+  const translateY = progress * 48;
+  const scale = 1 - progress * 0.04;
+
+  heroShell.style.opacity = opacity.toFixed(3);
+  heroShell.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale.toFixed(3)})`;
+};
+
+const closeMenu = () => {
+  navMenu.classList.remove("is-open");
+};
 
 if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu')
-    })
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("is-open");
+  });
 }
 
-if (navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu')
-    })
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+window.addEventListener(
+  "scroll",
+  () => {
+    setHeaderState();
+    setHeroState();
+  },
+  { passive: true }
+);
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 820) {
+    closeMenu();
+  }
+});
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.16,
+    rootMargin: "0px 0px -40px 0px",
+  }
+);
+
+revealItems.forEach((item) => revealObserver.observe(item));
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute("id");
+      const activeLink = document.querySelector(`.nav__link[href="#${id}"]`);
+
+      if (!activeLink) {
+        return;
+      }
+
+      if (entry.isIntersecting) {
+        navLinks.forEach((link) => link.classList.remove("is-active"));
+        activeLink.classList.add("is-active");
+      }
+    });
+  },
+  {
+    threshold: 0.45,
+    rootMargin: "-20% 0px -35% 0px",
+  }
+);
+
+sections.forEach((section) => sectionObserver.observe(section));
+
+if (heroVisual) {
+  const halos = heroVisual.querySelectorAll(".hero__halo");
+  const media = heroVisual.querySelector(".hero__portrait");
+
+  heroVisual.addEventListener("pointermove", (event) => {
+    const rect = heroVisual.getBoundingClientRect();
+    const relativeX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    const relativeY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+
+    halos.forEach((halo, index) => {
+      const depth = (index + 1) * 10;
+      halo.style.setProperty("--tx", `${relativeX * depth}px`);
+      halo.style.setProperty("--ty", `${relativeY * depth}px`);
+    });
+
+    media.style.transform = `translate3d(${relativeX * 10}px, ${relativeY * 12}px, 0)`;
+  });
+
+  heroVisual.addEventListener("pointerleave", () => {
+    halos.forEach((halo) => {
+      halo.style.setProperty("--tx", "0px");
+      halo.style.setProperty("--ty", "0px");
+    });
+
+    media.style.transform = "translate3d(0, 0, 0)";
+  });
 }
 
-const navLink = document.querySelectorAll('.nav__link')
-
-const linkAction = () => {
-    const navMenu = document.getElementById('nav-menu')
-    navMenu.classList.remove('show-menu')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-const scrollHeader = () => {
-    const header = document.getElementById('header')
-    this.scrollY >= 50 ? header.classList.add('scroll-header')
-        : header.classList.remove('scroll-header')
-}
-window.addEventListener('scroll', scrollHeader)
-
-const scrollUp = () => {
-    const scrollUp = document.getElementById('scroll-up')
-    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-        : scrollUp.classList.remove('show-scroll')
-}
-window.addEventListener('scroll', scrollUp)
-
-const sections = document.querySelectorAll('section[id]')
-
-const scrollActive = () => {
-    const scrollY = window.pageYOffset
-
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight,
-            sectionTop = current.offsetTop - 58,
-            sectionId = current.getAttribute('id'),
-            sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            sectionsClass.classList.add('active-link')
-        } else {
-            sectionsClass.classList.remove('active-link')
-        }
-    })
-}
-window.addEventListener('scroll', scrollActive)
-
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2500,
-    delay: 400,
-
-})
-
-sr.reveal(`.home__data, .footer__container`)
-
-sr.reveal(`.home__img-wrapper`, { origin: 'bottom', delay: 600 })
-
-sr.reveal(`.about__data`, { origin: 'left' })
-
-sr.reveal(`.education`, { origin: 'bottom', interval: 100 })
-
-// Adicionado o .certificate__card para garantir a mesma animação dos projetos
-sr.reveal(`.tech__box, .project__card, .certificate__card`, { interval: 100 })
-
-sr.reveal(`.contact__container`, { origin: 'right' })
-
-const contactForm = document.getElementById('contact-form')
-const contactButton = contactForm.querySelector('button')
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-    const originalContent = contactButton.innerHTML
-    contactButton.innerHTML = 'Enviando... <i class="ri-loader-4-line ri-spin"></i>'
-
-    const formData = new FormData(contactForm)
-
-    fetch("https://formsubmit.co/ajax/matheusbeiruth10@gmail.com", {
-        method: "POST",
-        body: formData
-    })
-        .then(response => response.json())
-        .then(data => {
-            contactButton.innerHTML = 'Mensagem Enviada ✅'
-            contactButton.style.backgroundColor = '#00e676'
-            contactButton.style.color = '#000'
-            contactForm.reset()
-
-            setTimeout(() => {
-                contactButton.innerHTML = originalContent
-                contactButton.style.backgroundColor = ''
-                contactButton.style.color = ''
-            }, 5000)
-        })
-        .catch(error => {
-            contactButton.innerHTML = 'Erro ao enviar ❌'
-            console.error('Erro:', error)
-
-            setTimeout(() => {
-                contactButton.innerHTML = originalContent
-            }, 3000)
-        })
-})
-
-
-const textElement = document.querySelector('.typewriter-text');
-const phrases = ['a Backend Engineer', 'a Java Specialist', 'a Python Expert', 'solving problems'];
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeWriter() {
-    const currentPhrase = phrases[phraseIndex];
-
-    if (isDeleting) {
-        textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    let typeSpeed = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === currentPhrase.length) {
-        isDeleting = true;
-        typeSpeed = 2000;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        typeSpeed = 500;
-    }
-
-    setTimeout(typeWriter, typeSpeed);
-}
-
-document.addEventListener('DOMContentLoaded', typeWriter);
-
-const yearSpan = document.querySelector('.footer__copy');
-if (yearSpan) {
-    const currentYear = new Date().getFullYear();
-    yearSpan.innerHTML = `&copy; ${currentYear} Matheus Beiruth. Engenheiro de Software.`;
-}
+setHeaderState();
+setHeroState();
