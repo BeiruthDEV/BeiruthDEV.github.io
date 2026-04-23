@@ -18,7 +18,7 @@
         content="Engenharia de Software focada em escalabilidade e regras de negócio complexas. Veja meus projetos.">
     <meta property="og:image" content="assets/img/preview.png">
 
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
@@ -28,55 +28,77 @@
 </head>
 
 <body>
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">&lt;Matheus <span>Beiruth</span> /&gt;</a>
+    <header class="header cinematic-header" id="header">
+        <nav class="nav container cinematic-nav">
+            <a href="#" class="nav__logo" style="color: #D4AF37;">MB.</a>
 
             <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li><a href="#home" class="nav__link active-link">Início</a></li>
-                    <li><a href="#about" class="nav__link">Sobre</a></li>
-                    <li><a href="#skills" class="nav__link">Stack</a></li>
-                    <li><a href="#projects" class="nav__link">Projetos</a></li>
-                    <li><a href="#education" class="nav__link">Formação</a></li>
-                    <li><a href="#certificates" class="nav__link">Certificados</a></li>
-                    <li><a href="#contact" class="nav__link">Contato</a></li>
+                <ul class="nav__list" style="gap: 2rem;">
+                    <li><a href="#home" class="nav__link nav__link-code" style="text-transform: lowercase; font-family: var(--code-font); font-size: 0.9rem; color: var(--text-color-light); transition: color 0.3s ease;">./Inicio</a></li>
+                    <li><a href="#about" class="nav__link nav__link-code" style="text-transform: lowercase; font-family: var(--code-font); font-size: 0.9rem; color: var(--text-color-light); transition: color 0.3s ease;">./Sobre</a></li>
+                    <li><a href="#skills" class="nav__link nav__link-code" style="text-transform: lowercase; font-family: var(--code-font); font-size: 0.9rem; color: var(--text-color-light); transition: color 0.3s ease;">./Stack</a></li>
+                    <li><a href="#projects" class="nav__link nav__link-code" style="text-transform: lowercase; font-family: var(--code-font); font-size: 0.9rem; color: var(--text-color-light); transition: color 0.3s ease;">./Projetos</a></li>
+                    <li><a href="#education" class="nav__link nav__link-code" style="text-transform: lowercase; font-family: var(--code-font); font-size: 0.9rem; color: var(--text-color-light); transition: color 0.3s ease;">./Formação</a></li>
+                    <li><a href="#certificates" class="nav__link nav__link-code" style="text-transform: lowercase; font-family: var(--code-font); font-size: 0.9rem; color: var(--text-color-light); transition: color 0.3s ease;">./Certificados</a></li>
+                    <li><a href="#contact" class="nav__link nav__link-code" style="text-transform: lowercase; font-family: var(--code-font); font-size: 0.9rem; color: var(--text-color-light); transition: color 0.3s ease;">./Contato</a></li>
                 </ul>
                 <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
             </div>
+            
+            <a href="mailto:contato@beiruth.dev" class="nav__cta">
+                <span style="font-family: var(--code-font); margin-right: 4px;">&gt;_</span> init_contact
+            </a>
+            
             <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line"></i></div>
         </nav>
     </header>
 
     <main class="main">
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content">
-                    <div class="home__data">
-                        <span class="home__subtitle">I am <span class="typewriter-text"></span></span>
+        <section class="home cinematic-home" id="home">
+            <!-- Glow background elements -->
+            <div class="glow-bg glow-primary"></div>
+            <div class="glow-bg glow-secondary"></div>
 
-                        <h1 class="home__title">Construindo Sistemas<br>Escaláveis e Seguros</h1>
-                        <p class="home__description">
-                            Foco em resolver problemas complexos de negócio através de arquiteturas limpas em <b>Java
-                                (Spring)</b> e <b>Python</b>.
-                            Pronto para impactar times de alta performance.
+            <div class="home__container container grid cinematic-grid">
+                <div class="home__content cinematic-content">
+                    <div class="home__data">
+                        <div class="cinematic-badge">
+                            <span class="pulse-dot"></span> Engenheiro de Software &lt;/&gt;
+                        </div>
+
+                        <h1 class="home__title cinematic-title">
+                            Construindo <br>
+                            <span class="text-gradient">Sistemas Digitais</span><br>
+                            com precisão.
+                        </h1>
+                        
+                        <p class="home__description cinematic-desc">
+                            Especialista em arquitetura backend, microsserviços e APIs de alta performance. Eu transformo lógica complexa em fundações escaláveis.
                         </p>
 
-                        <div class="home__buttons">
-                            <a href="assets/pdf/Curriculo_Matheus_Beiruth.pdf" download="Curriculo_Matheus_Beiruth.pdf"
-                                class="button">
-                                Baixar CV Completo <i class="ri-download-cloud-2-line"></i>
-                            </a>
-                            <a href="#contact" class="button button--ghost">
-                                Entrar em Contato <i class="ri-chat-3-line"></i>
-                            </a>
+                        <div class="cinematic-stacks">
+                            <span><i class="ri-server-line" style="color: var(--first-color)"></i> Backend</span>
+                            <span><i class="ri-code-s-slash-line" style="color: var(--first-color-alt)"></i> Frontend</span>
+                            <span><i class="ri-database-2-line" style="color: var(--first-color)"></i> Dados</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="home__img-wrapper">
-                    <div class="home__img-bg"></div>
-                    <img src="assets/img/perfil.png" alt="Matheus Beiruth" class="home__img">
+                <div class="cinematic-profile-wrapper">
+                    <div class="cinematic-profile-card">
+                        <div class="profile-bg-layer"></div>
+                        <img src="assets/img/perfil.png" alt="Matheus Beiruth" class="cinematic-img">
+                        
+                        <div class="profile-glass-info">
+                            <div>
+                                <h4>Matheus Beiruth</h4>
+                                <span>Software Engineer</span>
+                            </div>
+                            <div class="profile-icon">
+                                <i class="ri-shield-check-fill"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
