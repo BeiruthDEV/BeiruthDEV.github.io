@@ -8,7 +8,7 @@
 
 Um portfólio profissional projetado para destacar habilidades de **Engenharia de Software e Backend Development**. Construído com foco em design moderno (**Glassmorphism & Dark Mode**), performance e responsividade.
 
-![Preview do Portfólio](assets/img/preview.png)
+![Preview do Portfólio](assets/img/image.png)
 
 
 ---
