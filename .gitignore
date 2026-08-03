@@ -47,3 +47,5 @@ build/
 *.bak
 *.swp
 dist/
+
+.env
