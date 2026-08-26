@@ -2862,6 +2862,18 @@ button {
   align-items: stretch;
 }
 
+/* Impede que o conteudo largo dos visuais estique a coluna do grid:
+   os cards passam a caber na tela e cada visual rola no proprio container. */
+.services-grid--showcase > *,
+.process-grid--showcase > * { min-width: 0; }
+
+/* Os mockups dentro dos cards precisam de ~420px para nao colidirem.
+   Com 3 colunas fixas eles ficavam com ~272px entre 780px e 1300px de tela,
+   entao o numero de colunas passa a seguir a largura disponivel. */
+.services-grid--showcase {
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+}
+
 .service-card--showcase {
   display: flex;
   min-height: 674px;
@@ -3034,7 +3046,9 @@ button {
 
 .showcase-web__copy {
   position: absolute;
-  top: 89px;
+  /* O bloco tem altura fixa (o mockup nao cresce), entao o topo deixa folga
+     para os CTAs nao encostarem na faixa de estatisticas. */
+  top: 84px;
   left: 26px;
   width: 47%;
 }
@@ -3042,7 +3056,9 @@ button {
 .showcase-web__copy h4 {
   margin: 0;
   color: var(--text);
-  font-size: clamp(1.25rem, 1.65vw, 2rem);
+  /* Teto baixo de proposito: acima disso o titulo ganha linhas e empurra
+     os CTAs para fora da moldura em telas grandes. */
+  font-size: clamp(1.25rem, 1.65vw, 1.5rem);
   letter-spacing: -0.06em;
   line-height: 0.98;
 }
@@ -3228,4 +3244,25 @@ button {
   .service-visual { height: 300px; }.showcase-browser { inset: 9px; }.showcase-browser__nav { padding: 9px 11px; }.showcase-browser__nav strong { padding: 5px 9px; }.showcase-web__copy { top: 57px; left: 13px; }.showcase-web__copy h4 { font-size: 1.24rem; }.showcase-web__copy p { width: 88%; margin: 8px 0; font-size: 0.52rem; }.showcase-web__copy div { font-size: 0.46rem; }.showcase-web__copy b,.showcase-web__copy i { padding: 6px; }.showcase-phone { top: 56px; right: 9px; width: 42%; min-width: 112px; height: 202px; padding: 19px 7px 7px; }.showcase-phone h5 { margin-top: 10px; }.phone-stat { margin-top: 7px; padding: 6px; }.phone-stat i { height: 17px; }.showcase-web__stats { right: 9px; bottom: 9px; left: 9px; gap: 4px; }.showcase-web__stats span { min-height: 47px; padding: 6px; }.showcase-web__stats b { font-size: 0.68rem; }.service-card__heading { grid-template-columns: 46px 1fr; }.service-card__symbol { width: 46px; height: 46px; }.service-card--showcase h3 { font-size: 1.18rem; }.service-card--showcase .service-card__heading p { font-size: 0.83rem; }.service-points { gap: 9px; margin-top: 20px; font-size: 0.8rem; }
   .service-visual--backend { overflow-x: auto; }.backend-flow { min-width: 430px; }.executive-dashboard { min-width: 430px; }.service-visual--dashboard { overflow-x: auto; }
   .process-card--showcase .process-card__number { font-size: 3.7rem; }.process-card--showcase .process-card__header { grid-template-columns: 76px 1fr; min-height: 71px; }.process-card--showcase h3 { font-size: 1.08rem; }.process-card--showcase .process-card__header p { font-size: 0.78rem; }.process-workspace { height: 289px; }.process-panel { padding: 8px; }.process-panel h4 { font-size: 0.48rem; }.requirement-tags span { padding: 5px; font-size: 0.47rem; }.process-panel--checklist li,.process-panel--final-checklist li { padding-left: 21px; font-size: 0.51rem; }.process-panel--checklist li::before,.process-panel--final-checklist li::before { width: 14px; height: 14px; font-size: 0.55rem; }.blueprint-flow { gap: 2px; transform: scale(0.84); transform-origin: center; }.process-panel--integrations > div { gap: 2px; }.process-panel--integrations span { min-width: 39px; padding: 7px 2px; }.process-panel--quality span { font-size: 1.15rem; }.process-panel--quality small { font-size: 0.4rem; }.process-outcome { grid-template-columns: 39px 1fr; margin-top: 10px; }.process-outcome > span { width: 36px; height: 36px; }.process-outcome svg { width: 19px; height: 19px; }.process-outcome h4 { font-size: 0.7rem; }.process-outcome p { font-size: 0.58rem; }.process-cta--showcase h3 { font-size: 1rem; }.process-cta--showcase p { font-size: 0.78rem; }
+}
+
+/* Em telas estreitas o mockup do celular nao cabe: seu conteudo vaza pela
+   base e ele cobre a linha de estatisticas, alem de empurrar a coluna de
+   texto contra os CTAs. Abaixo de 510px o celular sai e a copy usa a
+   largura toda do navegador simulado. */
+@media (max-width: 510px) {
+  .service-visual--web .showcase-phone { display: none; }
+  .service-visual--web .showcase-web__copy { right: 13px; width: auto; }
+  .service-visual--web .showcase-web__copy p { width: 100%; }
+}
+
+/* A moldura do navegador simulado encolhe nos breakpoints intermediarios,
+   mas o celular mantinha 273px e ficava cortado pela base. A altura dele
+   passa a acompanhar cada faixa. */
+@media (max-width: 1100px) {
+  .service-visual--web .showcase-phone { height: 231px; }
+}
+
+@media (max-width: 780px) {
+  .service-visual--web .showcase-phone { height: 246px; }
 }
