@@ -49,3 +49,5 @@ build/
 dist/
 
 .env
+# Ferramentas locais
+.playwright-cli/
