@@ -18,7 +18,7 @@ function Card({ project, index }: { project: Project; index: number }) {
           src={project.image}
           alt={`Tela do projeto ${project.name}`}
           loading="lazy"
-          className="size-full object-cover object-top transition duration-700 group-hover:scale-[1.04] [@media(hover:hover)]:grayscale [@media(hover:hover)]:group-hover:grayscale-0"
+          className="size-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
         />
         <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-2.5 py-1 font-mono text-[11px] text-text backdrop-blur">
           {String(index + 1).padStart(2, '0')}
