@@ -11,14 +11,14 @@ function Card({ project, index }: { project: Project; index: number }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Abrir ${project.name} (${project.urlLabel})`}
-      className="group block w-[82vw] shrink-0 snap-center sm:w-[60vw] lg:w-[min(44vw,640px)]"
+      className="group relative block w-[82vw] shrink-0 snap-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:w-[60vw] lg:w-[min(44vw,640px)] [@media(hover:hover)]:hover:z-10 [@media(hover:hover)]:hover:-translate-y-2 [@media(hover:hover)]:hover:scale-[1.09]"
     >
-      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-panel">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-panel transition-[border-color,box-shadow] duration-500 group-hover:border-ember/50 group-hover:shadow-[0_40px_90px_-30px_rgba(255,107,53,0.45)]">
         <img
           src={project.image}
           alt={`Tela do projeto ${project.name}`}
           loading="lazy"
-          className="size-full object-cover object-top transition duration-700 group-hover:scale-[1.04]"
+          className="size-full object-cover object-top transition duration-700 group-hover:scale-[1.1]"
         />
         <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-2.5 py-1 font-mono text-[11px] text-text backdrop-blur">
           {String(index + 1).padStart(2, '0')}
