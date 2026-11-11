@@ -29,9 +29,10 @@ export default function Journey() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ delay: i * 0.05, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="group grid items-baseline gap-3 border-b border-paper-ink/20 py-8 transition-colors hover:bg-paper-2 md:grid-cols-[minmax(0,20rem)_1fr_1fr] md:gap-10 md:px-4"
+              className="group grid items-baseline gap-3 border-b border-paper-ink/20 py-8 transition-colors hover:bg-paper-2 md:grid-cols-[minmax(0,13rem)_1fr_1fr] md:gap-10 md:px-4 lg:grid-cols-[minmax(0,25rem)_1fr_1fr]"
             >
-              <time className="display whitespace-nowrap text-4xl !leading-none text-paper-ink/90 transition-colors group-hover:text-ember-deep sm:text-5xl">{step.period}</time>
+              {/* Em telas largas o período cabe numa linha só; abaixo disso ele quebra em duas, sem invadir o título */}
+              <time className="display text-4xl !leading-[1.05] text-paper-ink/90 transition-colors group-hover:text-ember-deep sm:text-[2.5rem] lg:whitespace-nowrap">{step.period}</time>
 
               <div>
                 <h3 className="text-xl font-medium sm:text-2xl">{step.title}</h3>

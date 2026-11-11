@@ -8,9 +8,12 @@ const statement =
 
 const words = statement.split(' ')
 
+// A última palavra termina de acender com 75% do progresso, para o texto estar todo claro antes de sair da tela
+const FINISH = 0.75
+
 function Word({ word, index, progress }: { word: string; index: number; progress: MotionValue<number> }) {
-  const start = index / words.length
-  const end = start + 1 / words.length
+  const start = (index / words.length) * FINISH
+  const end = ((index + 1) / words.length) * FINISH
   const opacity = useTransform(progress, [start, end], [0.16, 1])
   return (
     <motion.span style={{ opacity }} className="mr-[0.22em] inline-block">
@@ -29,14 +32,15 @@ const facts = [
 
 /** Parágrafo grande que "acende" palavra por palavra conforme a rolagem, seguido de uma ficha curta. */
 export default function About() {
-  const ref = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.8', 'end 0.55'] })
+  // acompanha só o parágrafo (não a seção inteira): começa a acender quando ele entra e termina antes de sair
+  const paragraph = useRef<HTMLParagraphElement>(null)
+  const { scrollYProgress } = useScroll({ target: paragraph, offset: ['start 0.9', 'end 0.5'] })
 
   return (
-    <section ref={ref} id="sobre" className="mx-auto max-w-[1400px] px-5 py-28 sm:px-8 sm:py-40">
+    <section id="sobre" className="mx-auto max-w-[1400px] px-5 py-28 sm:px-8 sm:py-40">
       <p className="mb-8 font-mono text-[11px] uppercase tracking-widest text-ember">( 01 ) Sobre</p>
 
-      <p className="display text-[clamp(2rem,5.6vw,5.25rem)] !leading-[1.04] !tracking-[-0.035em]" aria-label={statement}>
+      <p ref={paragraph} className="display text-[clamp(2rem,5.6vw,5.25rem)] !leading-[1.04] !tracking-[-0.035em]" aria-label={statement}>
         {words.map((word, i) => (
           <Word key={`${word}-${i}`} word={word} index={i} progress={scrollYProgress} />
         ))}
