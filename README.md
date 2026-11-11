@@ -1,4 +1,4 @@
-﻿# BeiruthDEV.github.io
+# BeiruthDEV.github.io
 
 Portfólio de **Matheus Beiruth**, desenvolvedor full-stack (React Native, TypeScript, Python e Java).
 
@@ -8,7 +8,6 @@ Site estático em React 19, TypeScript, Vite, Tailwind CSS v4, Framer Motion e T
 
 - Esta branch contém o **site já compilado** (`index.html`, `assets/`, `img/`, `files/`), que é o que o GitHub Pages serve.
 - O **código-fonte** do site fica na branch [`source`](../../tree/source).
-- `assets/img` e `assets/pdf` guardam arquivos da versão anterior do portfólio e foram mantidos para não quebrar links externos (por exemplo, o currículo).
 
 ## Rodar o código-fonte
 
