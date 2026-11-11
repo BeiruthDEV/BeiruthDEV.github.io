@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useMotionValue, useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { useReducedMotion } from '../lib'
@@ -14,33 +14,12 @@ function Card({ project, index }: { project: Project; index: number }) {
       className="group block w-[82vw] shrink-0 snap-center sm:w-[60vw] lg:w-[min(44vw,640px)]"
     >
       <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-panel">
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={`Tela do projeto ${project.name}`}
-            loading="lazy"
-            className="size-full object-cover object-top transition duration-700 group-hover:scale-[1.04] [@media(hover:hover)]:grayscale [@media(hover:hover)]:group-hover:grayscale-0"
-          />
-        ) : (
-          // Sem print: mostra o fluxo do projeto, que também acende ao passar o mouse
-          <div
-            className="flex size-full flex-wrap content-center items-center justify-center gap-x-2 gap-y-3 bg-[radial-gradient(ellipse_at_center,var(--color-panel-2),var(--color-panel)_70%)] p-6 font-mono text-[11px] sm:text-xs"
-            aria-label={`Fluxo do projeto: ${project.diagram?.join(', ')}`}
-          >
-            {project.diagram?.map((step, i) => (
-              <Fragment key={step}>
-                {i > 0 && (
-                  <span className="text-mute transition-colors group-hover:text-ember" aria-hidden="true">
-                    →
-                  </span>
-                )}
-                <span className="rounded-lg border border-line bg-ink/70 px-3 py-2 text-text/75 transition-colors duration-500 group-hover:border-ember/60 group-hover:text-ember">
-                  {step}
-                </span>
-              </Fragment>
-            ))}
-          </div>
-        )}
+        <img
+          src={project.image}
+          alt={`Tela do projeto ${project.name}`}
+          loading="lazy"
+          className="size-full object-cover object-top transition duration-700 group-hover:scale-[1.04] [@media(hover:hover)]:grayscale [@media(hover:hover)]:group-hover:grayscale-0"
+        />
         <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-2.5 py-1 font-mono text-[11px] text-text backdrop-blur">
           {String(index + 1).padStart(2, '0')}
         </span>

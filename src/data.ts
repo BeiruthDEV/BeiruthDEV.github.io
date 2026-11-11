@@ -27,10 +27,7 @@ export type Project = {
   category: string
   description: string
   tags: string[]
-  /** Print do projeto. Sem imagem, o card mostra o `diagram`. */
-  image?: string
-  /** Etapas de um fluxo, exibidas no lugar da imagem. */
-  diagram?: string[]
+  image: string
   url: string
   urlLabel: string
 }
@@ -85,16 +82,6 @@ export const projects: Project[] = [
     image: 'img/projects/trackio.webp',
     url: 'https://github.com/BeiruthDEV/TaskManagerAPI',
     urlLabel: 'github.com/BeiruthDEV/TaskManagerAPI',
-  },
-  {
-    slug: 'transflow',
-    name: 'TransFlow',
-    category: 'Backend · Eventos',
-    description: 'API de mobilidade orientada a eventos: registra corridas, publica no RabbitMQ e um worker atualiza o saldo do motorista de forma atômica no Redis.',
-    tags: ['FastAPI', 'MongoDB', 'RabbitMQ', 'Redis'],
-    diagram: ['API', 'MongoDB', 'RabbitMQ', 'worker', 'Redis'],
-    url: 'https://github.com/BeiruthDEV/transflow-backend',
-    urlLabel: 'github.com/BeiruthDEV/transflow-backend',
   },
   {
     slug: 'express-jwt-docker-api',
