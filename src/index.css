@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/*
+  Paleta
+  ink / panel / line  — modo escuro (fundo quase preto com tom azulado)
+  paper               — seções claras (papel quente)
+  ember               — acento principal (laranja brasa)
+  lilac               — acento secundário, usado só em gradientes
+*/
+@theme {
+  --color-ink: #0b0b10;
+  --color-panel: #13131b;
+  --color-panel-2: #1a1a25;
+  --color-line: #272734;
+  --color-text: #ececf1;
+  --color-mute: #8d8d9f;
+
+  --color-ember: #ff6b35;
+  --color-ember-soft: #ff9a6c;
+  --color-ember-deep: #d6481a;
+  --color-lilac: #a78bfa;
+  --color-mint: #5eead4;
+
+  --color-paper: #f3eee6;
+  --color-paper-2: #e6dfd3;
+  --color-paper-ink: #17120f;
+  --color-paper-mute: #6b6258;
+
+  /* Fontes leves e sem serifa: Inter para texto, Inter Tight (fina e justa) nos títulos, Geist Mono nos rótulos */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter Tight", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html {
+  background: var(--color-ink);
+  color-scheme: dark;
+  scroll-padding-top: 3rem;
+}
+
+body {
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-ember);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Tipografia de exibição: fina, justa, com ponto final colorido. Em @layer para poder ser sobrescrita por classes do Tailwind. */
+@layer components {
+  .display {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+  }
+}
+
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+/* Faixa de tecnologias em movimento contínuo */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+.marquee-reverse { animation-direction: reverse; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; flex-wrap: wrap; width: auto; }
+  html { scroll-behavior: auto; }
+}
+
+/* Barra de rolagem horizontal da galeria no celular: escondida */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 999px;
+  border: 3px solid var(--color-ink);
+}
