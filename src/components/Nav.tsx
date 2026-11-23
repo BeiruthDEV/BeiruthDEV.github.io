@@ -7,25 +7,31 @@ type NavProps = {
 }
 
 /**
- * Menu fixo e discreto. O `mix-blend-difference` inverte a cor do texto sobre fundos
- * claros, então ele continua legível nas seções de papel.
+ * Menu fixo e discreto: marca fina à esquerda, links em caixa-alta no centro e o botão de contato
+ * à direita. O `mix-blend-difference` inverte a cor do texto sobre fundos claros, então ele
+ * continua legível nas seções de papel.
  */
 export default function Nav({ active, onOpenPalette }: NavProps) {
   return (
     <header className="fixed inset-x-0 top-0 z-40 text-white mix-blend-difference">
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-4 text-[13px] sm:px-8" aria-label="Navegação principal">
-        <button type="button" onClick={() => scrollToSection('inicio')} className="font-display text-xl font-extrabold tracking-tighter" aria-label="Ir para o início">
-          mb<span aria-hidden="true">.</span>
+      <nav className="flex items-center justify-between px-5 py-4 sm:px-[3vw]" aria-label="Navegação principal">
+        <button
+          type="button"
+          onClick={() => scrollToSection('inicio')}
+          className="font-condensed text-xl font-light uppercase tracking-[0.32em]"
+          aria-label="Ir para o início"
+        >
+          Beiruth
         </button>
 
-        <ul className="hidden items-center gap-7 md:flex">
+        <ul className="hidden items-center gap-8 text-[10px] uppercase tracking-[0.18em] md:flex">
           {sections.slice(1).map(({ id, label }) => (
             <li key={id}>
               <button
                 type="button"
                 onClick={() => scrollToSection(id)}
                 aria-current={active === id ? 'location' : undefined}
-                className={active === id ? 'underline decoration-1 underline-offset-8' : 'opacity-70 transition-opacity hover:opacity-100'}
+                className={active === id ? 'border-b border-white pb-1' : 'pb-1 opacity-70 transition-opacity hover:opacity-100'}
               >
                 {label}
               </button>
@@ -45,9 +51,9 @@ export default function Nav({ active, onOpenPalette }: NavProps) {
           <button
             type="button"
             onClick={() => scrollToSection('contato')}
-            className="border-b border-white pb-0.5 transition-opacity hover:opacity-70"
+            className="border border-white px-4 py-2.5 text-[10px] uppercase tracking-[0.16em] transition-colors hover:bg-white hover:text-black"
           >
-            Vamos conversar ↗
+            Vamos conversar
           </button>
         </div>
       </nav>

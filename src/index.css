@@ -30,6 +30,8 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Inter Tight", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* Condensada e fina, só para o nome gigante e o título da hero */
+  --font-condensed: "Sofia Sans Extra Condensed", "Inter Tight", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {

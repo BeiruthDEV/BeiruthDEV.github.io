@@ -12,6 +12,7 @@ export const profile = {
   location: 'Maricá, Rio de Janeiro',
   focus: 'Apps mobile · APIs · sistemas web',
   photo: 'img/perfil.png',
+  mascot: 'img/chibi.webp',
   resume: 'files/CV_Matheus_Beiruth_FullStack_2026.pdf',
   email: 'matheusbeiruth10@gmail.com',
   links: {
